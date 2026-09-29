@@ -1,0 +1,20 @@
+# PLACEHOLDER printer locations and temperatures for software demonstration only.
+printers:
+  printer_1:
+    enabled: true
+    host: "192.168.1.101"
+    interface: mock
+    position: {x_mm: 500, y_mm: 400, z_mm: 0}
+    safe_bed_temperature_c: 35
+  printer_2:
+    enabled: true
+    host: "192.168.1.102"
+    interface: mock
+    position: {x_mm: 1200, y_mm: 400, z_mm: 0}
+    safe_bed_temperature_c: 35
+  printer_3:
+    enabled: false
+    host: "192.168.1.103"
+    interface: mock
+    position: {x_mm: 1700, y_mm: 400, z_mm: 0}
+    safe_bed_temperature_c: 35

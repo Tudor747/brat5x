@@ -1,0 +1,76 @@
+# ALL VALUES IN THIS FILE ARE PLACEHOLDERS ONLY.
+# Replace them with measured CAD/frame data before commanding physical hardware.
+robot:
+  name: prototype_arm
+  units:
+    linear: mm
+    angular_internal: rad
+    angular_config: deg
+
+  rail:
+    name: J0
+    type: prismatic
+    min_mm: 0
+    max_mm: 2000
+    home_mm: 0
+    motor: {gear_ratio: 1.0, steps_per_revolution: 200, microstepping: 16}
+
+  joints:
+    J1:
+      type: revolute
+      min_deg: -180
+      max_deg: 180
+      home_deg: 0
+      motor: {gear_ratio: 10.0, steps_per_revolution: 200, microstepping: 16}
+    J2:
+      type: revolute
+      min_deg: -90
+      max_deg: 90
+      home_deg: 0
+      motor: {gear_ratio: 20.0, steps_per_revolution: 200, microstepping: 16}
+    J3:
+      type: revolute
+      min_deg: -120
+      max_deg: 120
+      home_deg: 0
+      motor: {gear_ratio: 20.0, steps_per_revolution: 200, microstepping: 16}
+    J4:
+      type: revolute
+      min_deg: -90
+      max_deg: 90
+      home_deg: 0
+      motor: {gear_ratio: 10.0, steps_per_revolution: 200, microstepping: 16}
+    J5:
+      type: revolute
+      min_deg: -180
+      max_deg: 180
+      home_deg: 0
+      motor: {gear_ratio: 5.0, steps_per_revolution: 200, microstepping: 16}
+
+  # Explicit frame chain. Each entry applies pre_transform, joint rotation,
+  # then post_transform. Values below are illustrative, not measured geometry.
+  kinematics:
+    rotary_chain:
+      - joint: J1
+        axis: z
+        pre_transform: {translation_mm: [0, 0, 150], rpy_deg: [0, 0, 0]}
+        post_transform: {translation_mm: [0, 0, 0], rpy_deg: [0, 0, 0]}
+      - joint: J2
+        axis: y
+        pre_transform: {translation_mm: [0, 0, 0], rpy_deg: [0, 0, 0]}
+        post_transform: {translation_mm: [0, 0, 200], rpy_deg: [0, 0, 0]}
+      - joint: J3
+        axis: y
+        pre_transform: {translation_mm: [0, 0, 0], rpy_deg: [0, 0, 0]}
+        post_transform: {translation_mm: [300, 0, 0], rpy_deg: [0, 0, 0]}
+      - joint: J4
+        axis: y
+        pre_transform: {translation_mm: [0, 0, 0], rpy_deg: [0, 0, 0]}
+        post_transform: {translation_mm: [250, 0, 0], rpy_deg: [0, 0, 0]}
+      - joint: J5
+        axis: x
+        pre_transform: {translation_mm: [0, 0, 0], rpy_deg: [0, 0, 0]}
+        post_transform: {translation_mm: [100, 0, 0], rpy_deg: [0, 0, 0]}
+    tcp_transform:
+      translation_mm: [120, 0, 0]
+      rpy_deg: [0, 0, 0]

@@ -1,0 +1,32 @@
+# PLACEHOLDER joint poses. Validate every pose on the physical machine at low
+# speed after CAD geometry, endstops, and guarding are finalized.
+taught_poses:
+  HOME:
+    rail_mm: 0
+    joints_deg: {J1: 0, J2: 0, J3: 0, J4: 0, J5: 0}
+
+  PRINTER_1_RAIL:
+    rail_mm: 500
+    joints_deg: {J1: 0, J2: 0, J3: 0, J4: 0, J5: 0}
+  PRINTER_1_APPROACH:
+    rail_mm: 500
+    joints_deg: {J1: 20, J2: 35, J3: -40, J4: 15, J5: 90}
+  PRINTER_1_PUSH_START:
+    rail_mm: 500
+    joints_deg: {J1: 20, J2: 42, J3: -48, J4: 12, J5: 90}
+  PRINTER_1_PUSH_END:
+    rail_mm: 500
+    joints_deg: {J1: 20, J2: 30, J3: -30, J4: 8, J5: 90}
+
+  PRINTER_2_RAIL:
+    rail_mm: 1200
+    joints_deg: {J1: 0, J2: 0, J3: 0, J4: 0, J5: 0}
+  PRINTER_2_APPROACH:
+    rail_mm: 1200
+    joints_deg: {J1: 20, J2: 35, J3: -40, J4: 15, J5: 90}
+  PRINTER_2_PUSH_START:
+    rail_mm: 1200
+    joints_deg: {J1: 20, J2: 42, J3: -48, J4: 12, J5: 90}
+  PRINTER_2_PUSH_END:
+    rail_mm: 1200
+    joints_deg: {J1: 20, J2: 30, J3: -30, J4: 8, J5: 90}
